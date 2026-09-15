@@ -1,0 +1,17 @@
+{
+  "name": "lusion-picturebook-3d",
+  "version": "1.0.0",
+  "description": "Lusion 唯美绘本风 3D 童话场景搭建 —— 林间童话小镇",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.185.0"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
+  }
+}

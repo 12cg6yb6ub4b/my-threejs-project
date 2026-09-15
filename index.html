@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Lusion 唯美绘本风 3D 童话小镇</title>
+  <style>
+    /* ===== 全局基础样式 ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #eef4ee; }
+    body { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
+    canvas { display: block; touch-action: none; }
+
+    /* ===== 顶部标题 ===== */
+    #title {
+      position: fixed; top: 18px; left: 22px; z-index: 10;
+      color: #5c6b52; text-shadow: 0 1px 2px rgba(255,255,255,.6);
+      pointer-events: none; user-select: none;
+    }
+    #title h1 { font-size: 17px; font-weight: 700; letter-spacing: 1px; }
+    #title p  { font-size: 12px; margin-top: 4px; opacity: .8; }
+    /* ===== 右侧控制面板 ===== */
+    #panel {
+      position: fixed; top: 18px; right: 22px; z-index: 10;
+      display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+    }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn {
+      padding: 7px 14px; font-size: 13px; cursor: pointer; border: 1px solid rgba(255,255,255,.7);
+      background: rgba(255,255,255,.72); color: #55614c; border-radius: 999px;
+      backdrop-filter: blur(4px); transition: all .18s ease; user-select: none;
+      box-shadow: 0 2px 8px rgba(90,100,70,.12);
+    }
+    .btn:hover { background: #fff; color: #3f4a39; transform: translateY(-1px); }
+    .btn.active { background: #7d9a72; color: #fff; border-color: #7d9a72; }
+    .group-label {
+      font-size: 11px; color: #6d7a63; margin: 2px 10px 0 0; align-self: center;
+    }
+
+    /* ===== 底部操作提示 ===== */
+    #hint {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      z-index: 10; text-align: center; color: #5c6b52;
+      background: rgba(255,255,255,.7); padding: 8px 18px; border-radius: 999px;
+      font-size: 13px; backdrop-filter: blur(4px); pointer-events: none; user-select: none;
+      box-shadow: 0 2px 8px rgba(90,100,70,.12);
+      transition: opacity .4s ease;
+    }
+    #hint b { color: #3f4a39; }
+
+    /* ===== 加载遮罩 ===== */
+    #loader {
+      position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      background: linear-gradient(160deg, #f4f1e8, #e8efe4);
+      transition: opacity .8s ease; color: #6d7a63; font-size: 14px; letter-spacing: 2px;
+    }
+    #loader.hide { opacity: 0; pointer-events: none; }
+    .dots { display: flex; gap: 8px; }
+    .dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #9db392; animation: bounce 1.2s infinite ease-in-out;
+    }
+    .dots span:nth-child(2) { animation-delay: .15s; }
+    .dots span:nth-child(3) { animation-delay: .3s; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); opacity:.5 } 50% { transform: translateY(-8px); opacity:1 } }
+
+    /* ===== 手绘文字弹窗（射线拾取反馈） ===== */
+    #popup {
+      position: fixed; z-index: 30; max-width: 240px; padding: 10px 16px;
+      background: rgba(255, 251, 240, .92); border: 2px solid #d8c9a8;
+      border-radius: 14px 14px 14px 4px;
+      box-shadow: 0 6px 18px rgba(100, 90, 60, .18);
+      color: #6b5b3f; font-size: 15px; line-height: 1.55; white-space: pre-line;
+      font-family: "Kaiti SC", "KaiTi", "STKaiti", "Comic Sans MS", cursive;
+      pointer-events: none; user-select: none; opacity: 0;
+      transform: translateY(6px) rotate(-1.5deg) scale(.92);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    #popup.show { opacity: 1; transform: translateY(0) rotate(-1.5deg) scale(1); }
+    #popup::before {
+      content: ""; position: absolute; left: 14px; bottom: -8px;
+      width: 14px; height: 14px; background: rgba(255, 251, 240, .92);
+      border-right: 2px solid #d8c9a8; border-bottom: 2px solid #d8c9a8;
+      transform: rotate(45deg); border-radius: 0 0 3px 0;
+    }
+
+    /* ===== 展品详情面板（虚拟展厅/艺术馆 · 点击展品查看详细介绍） ===== */
+    #galleryPanel {
+      position: fixed; inset: 0; z-index: 40; display: none;
+      align-items: center; justify-content: center;
+      background: rgba(60, 70, 55, .35); backdrop-filter: blur(3px);
+    }
+    #galleryPanel.show { display: flex; }
+    .gp-card {
+      width: min(640px, 92vw); max-height: 86vh; overflow: auto;
+      background: #fdf8ec; border: 3px solid #d8c9a8;
+      border-radius: 20px 20px 20px 6px;
+      box-shadow: 0 18px 50px rgba(60, 60, 40, .35);
+      padding: 24px; display: flex; gap: 22px; flex-wrap: wrap;
+      font-family: "Kaiti SC", "KaiTi", "STKaiti", serif;
+      transform: translateY(14px) rotate(-.6deg); transition: transform .28s ease;
+    }
+    #galleryPanel.show .gp-card { transform: translateY(0) rotate(-.6deg); }
+    .gp-art {
+      flex: 1 1 240px; min-width: 0; align-self: flex-start;
+      border: 7px solid #fff; outline: 2px solid #d8c9a8;
+      border-radius: 8px; background: #fff; box-shadow: 0 4px 14px rgba(90,80,50,.14);
+    }
+    .gp-art canvas { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .gp-body { flex: 1 1 230px; min-width: 0; }
+    .gp-body h2 { font-size: 25px; color: #6b5b3f; margin: 4px 0 12px; letter-spacing: 3px; }
+    .gp-body p { font-size: 16px; line-height: 1.95; color: #7a6a4c; }
+    .gp-tag {
+      display: inline-block; margin-top: 12px; font-size: 12px; color: #9a8a68;
+      border: 1px solid #d8c9a8; border-radius: 999px; padding: 3px 12px;
+    }
+    #gpClose {
+      margin-top: 18px; padding: 9px 22px; font-size: 15px; cursor: pointer;
+      background: #7d9a72; color: #fff; border: none; border-radius: 999px;
+      font-family: inherit; box-shadow: 0 3px 10px rgba(90,100,70,.2);
+      transition: all .18s ease;
+    }
+    #gpClose:hover { background: #6d8a62; transform: translateY(-1px); }
+
+    /* ===== 移动端触屏控件（仅触屏设备创建/显示） ===== */
+    #joyBase {
+      position: fixed; z-index: 25; width: 110px; height: 110px;
+      border-radius: 50%; border: 2px solid rgba(255,255,255,.55);
+      background: rgba(255,255,255,.18); backdrop-filter: blur(2px);
+      display: none; align-items: center; justify-content: center;
+      transform: translate(-50%, -50%); pointer-events: none;
+    }
+    #joyKnob {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.75); box-shadow: 0 2px 8px rgba(80,90,60,.25);
+    }
+    #jumpBtn {
+      position: fixed; z-index: 25; right: 26px; bottom: 40px;
+      width: 62px; height: 62px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.7); background: rgba(255,255,255,.55);
+      color: #4a5a3e; font-size: 22px; line-height: 1; cursor: pointer;
+      backdrop-filter: blur(3px); box-shadow: 0 3px 10px rgba(80,90,60,.2);
+      user-select: none; -webkit-user-select: none; touch-action: none;
+    }
+    #jumpBtn:active { background: #7d9a72; color: #fff; }
+    /* 非触屏设备隐藏移动端控件 */
+    @media (hover: hover) and (pointer: fine) {
+      #joyBase, #jumpBtn { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 加载遮罩 -->
+  <div id="loader">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div>正在绘制童话小镇…</div>
+  </div>
+
+  <!-- 顶部标题 -->
+  <div id="title">
+    <h1>Lusion 唯美绘本风 · 童话小镇</h1>
+    <p>林间 · 草甸 · 溪流 · 古树</p>
+  </div>
+
+  <!-- 右侧控制面板 -->
+  <div id="panel">
+    <div class="row">
+      <span class="group-label">氛围</span>
+      <button class="btn active" data-atmo="day">☀ 白天</button>
+      <button class="btn" data-atmo="dusk">🌇 黄昏</button>
+      <button class="btn" data-atmo="night">🌙 夜晚</button>
+      <button class="btn" id="btnAuto">⏱ 自动流转</button>
+    </div>
+    <div class="row">
+      <span class="group-label">视角</span>
+      <button class="btn active" data-view="fps">🚶 漫游</button>
+      <button class="btn" data-view="orbit">🔭 俯视</button>
+    </div>
+    <div class="row">
+      <span class="group-label">工具</span>
+      <button class="btn" id="btnShot">📷 截图导出</button>
+      <button class="btn" id="btnReset">🔄 场景重置</button>
+      <button class="btn" id="btnHint">💡 帮助</button>
+    </div>
+  </div>
+
+  <!-- 底部操作提示 -->
+  <div id="hint">
+    点击画面锁定鼠标 · <b>W A S D</b> 移动 · <b>空格</b> 跳跃 · <b>E</b> 互动 · <b>滚轮</b> 缩放 · <b>Shift</b> 加速
+  </div>
+
+  <!-- 展品详情面板（虚拟展厅/艺术馆 · 射线投射点击展品查看详细介绍） -->
+  <div id="galleryPanel">
+    <div class="gp-card">
+      <div class="gp-art" id="gpArt"></div>
+      <div class="gp-body">
+        <h2 id="gpTitle"></h2>
+        <p id="gpDesc"></p>
+        <span class="gp-tag">📌 绘本画廊 · 虚拟展厅展品</span>
+        <br/>
+        <button id="gpClose">✕ 收起介绍</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 调试用错误显示（可随时删除） -->
+  <script>
+    function showErr(msg) {
+      const d = document.createElement('div');
+      d.style.cssText = 'position:fixed;left:10px;top:10px;z-index:9999;background:#300;color:#fdd;padding:10px;font:12px/1.5 monospace;white-space:pre-wrap;max-width:85vw;max-height:60vh;overflow:auto';
+      d.textContent = msg;
+      document.body.appendChild(d);
+    }
+    window.addEventListener('error', (e) => showErr('ERROR: ' + (e.message || (e.error && e.error.stack) || String(e.error))));
+    window.addEventListener('unhandledrejection', (e) => showErr('REJECT: ' + String((e.reason && e.reason.stack) || e.reason)));
+  </script>
+
+  <!-- 入口脚本 -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
