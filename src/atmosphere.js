@@ -6,7 +6,7 @@
  *  雾色、辉光强度、萤火虫/波光透明度、星星显隐。
  * ============================================================
  */
-import * as THREE from 'three';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 import { makeStarTexture } from './shaders.js';
 /** 三个氛围预设（数值均为经调试的经验值） */
 export const PRESETS = [
