@@ -1,0 +1,57 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(245, 240, 232, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.03 / DAY &amp; NIGHT</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="74" width="420" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER TWO · 昼夜流转</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="110" width="440" height="56">
+    <content textType="title" fontSize="36" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" letterSpacing="2" wrap="false">
+      <p>一日三时，各得其所</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="520" topLeftY="122" width="380" height="56">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.85)" lineSpacing="multiple:1.5" textAlign="left">
+      <p>同一座小镇，三种光线语言：白天草甸透亮，黄昏长影暖金，夜晚灯火次第亮起。</p>
+    </content>
+  </shape>
+  <img src="VeShbQMbGoM2Vbx5ObPcXbldn0c" topLeftX="60" topLeftY="196" width="269" height="300"/>
+  <img src="NGh2bqnvnoQFWkxeJREc3Aiinlb" topLeftX="345" topLeftY="196" width="269" height="300"/>
+  <img src="WL7cb0a1Ood9xXxvLHUcTzZHnWh" topLeftX="630" topLeftY="196" width="269" height="300"/>
+  <shape type="text" topLeftX="60" topLeftY="502" width="269" height="20">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" textAlign="center" letterSpacing="3" wrap="false">
+      <p>DAY · 白天</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="345" topLeftY="502" width="269" height="20">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" textAlign="center" letterSpacing="3" wrap="false">
+      <p>DUSK · 黄昏</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="630" topLeftY="502" width="269" height="20">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" textAlign="center" letterSpacing="3" wrap="false">
+      <p>NIGHT · 夜晚</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>昼夜系统是这个场景最直观的体验之一：一键切换白天、黄昏与夜晚，也可以开启自动流转。</p>
+    <p>光线、雾、天空与水面会随时段整体联动，营造完全不同的氛围。</p>
+  </content>
+</note>
+</slide>

@@ -1,0 +1,118 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(245, 240, 232, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.08 / HIGHLIGHT 03</p>
+    </content>
+  </shape>
+  <img src="C1ePbSTHDooDXHxTc4acu370ncf" topLeftX="60" topLeftY="100" width="470" height="365"/>
+  <shape type="text" topLeftX="60" topLeftY="478" width="470" height="22">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.55)" letterSpacing="2" wrap="false">
+      <p>FIELD OF FLOWERS · 花瓣与溪流微距</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="580" topLeftY="74" width="360" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER FIVE · 核心技术 03</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="580" topLeftY="110" width="360" height="52">
+    <content textType="title" fontSize="30" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" letterSpacing="2" wrap="false">
+      <p>材质，让童话接近真实</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="580" topLeftY="168" width="360" height="24">
+    <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" letterSpacing="4" wrap="false">
+      <p>MATERIALS WITH SOUL</p>
+    </content>
+  </shape>
+  <line startX="580" startY="206" endX="630" endY="206">
+    <border color="rgba(160, 132, 72, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="580" topLeftY="228" width="50" height="36">
+    <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>01</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="226" width="280" height="26">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" wrap="false">
+      <p>SSS 花朵</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="254" width="280" height="22">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+      <p>背光透光 · 菲涅尔描边</p>
+    </content>
+  </shape>
+  <line startX="580" startY="300" endX="900" endY="300">
+    <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="580" topLeftY="314" width="50" height="36">
+    <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>02</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="312" width="280" height="26">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" wrap="false">
+      <p>大气散射</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="340" width="280" height="22">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+      <p>瑞利 + 米氏天空与雾</p>
+    </content>
+  </shape>
+  <line startX="580" startY="386" endX="900" endY="386">
+    <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="580" topLeftY="400" width="50" height="36">
+    <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>03</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="398" width="280" height="26">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" wrap="false">
+      <p>水面波光</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="426" width="280" height="22">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+      <p>太阳高光随视角流动</p>
+    </content>
+  </shape>
+  <line startX="580" startY="472" endX="900" endY="472">
+    <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="580" topLeftY="486" width="50" height="36">
+    <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>04</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="484" width="280" height="26">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" wrap="false">
+      <p>夜景提亮</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="644" topLeftY="512" width="280" height="22">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+      <p>月光与补光，暗部依旧清晰</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>画面真实感的来源，是四层材质与光照细节。</p>
+    <p>花朵使用次表面散射着色器，逆光时花瓣透光；天空与雾使用大气散射；水面波光随视角变化。</p>
+    <p>夜晚再通过整体提亮与补光，保证暗部细节可读。</p>
+  </content>
+</note>
+</slide>

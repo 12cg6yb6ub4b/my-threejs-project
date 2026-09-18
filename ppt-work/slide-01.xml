@@ -1,0 +1,53 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data>
+  <img src="SbqkbhEFkouLgzxAz7ac1fMsnhd" topLeftX="0" topLeftY="0" width="960" height="540"/>
+  <shape type="rect" topLeftX="0" topLeftY="0" width="960" height="540">
+    <fill><fillColor color="rgba(20, 30, 26, 0.76)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="72" topLeftY="72" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="880" topLeftY="72" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="72" topLeftY="460" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="880" topLeftY="460" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <line startX="80" startY="64" endX="880" endY="64">
+    <border color="rgba(196, 169, 107, 0.7)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="80" topLeftY="28" width="400" height="28">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="196" width="600" height="44">
+    <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" textAlign="center" letterSpacing="6" wrap="false">
+      <p>LUSION PICTUREBOOK 3D</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="242" width="600" height="100">
+    <content textType="title" fontSize="72" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" textAlign="center" letterSpacing="8" wrap="false">
+      <p>唯 美 绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="356" width="600" height="40">
+    <content textType="sub-headline" fontSize="20" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.85)" textAlign="center" letterSpacing="4" wrap="false">
+      <p>林间童话小镇 · 一个可漫步的 3D 场景</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="440" width="600" height="36">
+    <content textType="body" fontSize="14" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" textAlign="center" letterSpacing="4" wrap="false">
+      <p>— 一 座 可 漫 步 的 童 话 小 镇 —</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>大家好，欢迎来到 Lusion 唯美绘。这是一款基于 Three.js 构建的林间童话小镇，一个在浏览器里即可漫步的 3D 交互场景。</p>
+    <p>今天我会带大家走一遍这个项目的视觉成果、技术架构与核心实现。</p>
+  </content>
+</note>
+</slide>

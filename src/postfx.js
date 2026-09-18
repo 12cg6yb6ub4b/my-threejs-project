@@ -27,11 +27,11 @@ import { makePaperTexture } from './shaders.js';
 const PictureBookShader = {
   uniforms: {
     tDiffuse: { value: null },
-    uVignette: { value: 0.28 },       // 暗角强度
-    uChroma: { value: 0.0016 },       // 色彩弥散（像素偏移比例）
-    uGrain: { value: 0.07 },          // 纸张颗粒
-    uSoft: { value: 0.22 },           // 柔化高光（调低，避免把阴影糊平）
-    uContrast: { value: 0.13 },       // 对比度压缩量（微对比，避免灰塑料感）
+    uVignette: { value: 0.12 },       // 暗角强度（低多边形清新风：几乎无暗角）
+    uChroma: { value: 0.0002 },       // 色彩弥散（像素偏移比例，近无）
+    uGrain: { value: 0.006 },         // 纸张颗粒（更干净通透，接近写实质感）
+    uSoft: { value: 0.04 },           // 柔化高光（极弱，保留清晰边缘）
+    uContrast: { value: 0.012 },      // 对比度压缩量（保留更多对比，画面更扎实）
     uPaper: { value: makePaperTexture() },
   },
   vertexShader: /* glsl */ `
@@ -74,10 +74,10 @@ const PictureBookShader = {
       // ---- 3. 压低对比度：整体向中灰靠拢，画面更柔和 ----
       col = mix(vec3(0.5), col, 1.0 - uContrast);
 
-      // ---- 3.5 微分离色调：暗部偏冷、高光偏暖，增强体积与真实感 ----
+      // ---- 3.5 微分离色调：暗部偏冷、高光偏暖（极弱，保持画面干净）----
       float lum2 = dot(col, vec3(0.299, 0.587, 0.114));
-      vec3 coolTone = vec3(0.96, 0.985, 1.02);
-      vec3 warmTone = vec3(1.03, 1.01, 0.985);
+      vec3 coolTone = vec3(0.985, 0.992, 1.005);
+      vec3 warmTone = vec3(1.008, 1.003, 0.995);
       col *= mix(coolTone, warmTone, clamp(lum2 * 1.7, 0.0, 1.0));
 
       // ---- 4. 暗角 ----
@@ -111,7 +111,7 @@ export function setupPostFX(renderer, scene, camera) {
   outlinePass.hiddenEdgeColor.set('#4a4038');
   composer.addPass(outlinePass);
   // 柔化高光：压至极弱，几乎无泛光
-  const bloomPass = new UnrealBloomPass(size, 0.06, 0.25, 0.96);
+  const bloomPass = new UnrealBloomPass(size, 0.04, 0.25, 0.97);
   composer.addPass(bloomPass);
   // 绘本调色（现在仅透传颜色）
   const picturePass = new ShaderPass(PictureBookShader);

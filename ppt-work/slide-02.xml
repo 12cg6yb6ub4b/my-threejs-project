@@ -1,0 +1,67 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(245, 240, 232, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <img src="SaUQbIRskoLXZwxT0NRcujqOnvh" topLeftX="60" topLeftY="76" width="284" height="440"/>
+  <shape type="rect" topLeftX="380" topLeftY="0" width="580" height="540">
+    <fill><fillColor color="rgba(30, 48, 36, 1)"/></fill>
+  </shape>
+  <shape type="text" topLeftX="420" topLeftY="24" width="480" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.02 / OVERVIEW</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="420" topLeftY="86" width="460" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER ONE · 项目概览</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="420" topLeftY="128" width="500" height="64">
+    <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" letterSpacing="2" wrap="false">
+      <p>把童话装进浏览器</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="420" topLeftY="200" width="500" height="28">
+    <content textType="caption" fontSize="12" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+      <p>A TOWN YOU CAN WALK THROUGH</p>
+    </content>
+  </shape>
+  <line startX="420" startY="238" endX="470" endY="238">
+    <border color="rgba(196, 169, 107, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="420" topLeftY="258" width="500" height="170">
+    <content textType="body" fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.85)" lineSpacing="multiple:1.7" letterSpacing="0.5">
+      <p>一座运行在浏览器中的低多边形 3D 场景。</p>
+      <p>林间草甸、溪流环绕，木屋、风车、钟楼、蘑菇屋与画廊错落其间——</p>
+      <p>一座可以漫步、可以互动、可以穿越昼夜的童话小镇。</p>
+    </content>
+  </shape>
+  <line startX="420" startY="496" endX="900" endY="496">
+    <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="420" topLeftY="460" width="500" height="28">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>── 森林里的每一盏灯，都为你而亮 ──</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="860" topLeftY="506" width="60" height="22">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.5)" textAlign="right" wrap="false">
+      <p>02</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>唯美绘的定位，是把一本童话绘本变成可以走进去的 3D 世界。</p>
+    <p>它运行在浏览器里，无需安装；低多边形的美术风格，让光影与色彩成为主角。</p>
+    <p>接下来的几页，我会分别展示昼夜氛围、场景内容与技术实现。</p>
+  </content>
+</note>
+</slide>

@@ -145,6 +145,22 @@ export function createInteraction(scene, camera, renderer, world, handlers = {})
       if (handlers.onGallery) handlers.onGallery(data);
       return;
     }
+    // 寻物任务：信物拾取 / NPC 对话 / 目标面板提示
+    if (data.type === 'quest') {
+      spawnBurst(point, data.color || '#ffe9b0');
+      if (handlers.onQuest) handlers.onQuest(data, point);
+      return;
+    }
+    if (data.type === 'npc') {
+      spawnBurst(point, '#e8f5d0');
+      if (handlers.onNpc) handlers.onNpc(data, point);
+      return;
+    }
+    if (data.type === 'panel') {
+      spawnBurst(point, '#f5e3a0');
+      if (handlers.onPanel) handlers.onPanel(data, point);
+      return;
+    }
     // 粒子爆发
     spawnBurst(point, BURST_COLOR[data.id] || '#ffe9b0');
     // 摆动动画（仅带 swing 类型的整体道具）
@@ -155,8 +171,8 @@ export function createInteraction(scene, camera, renderer, world, handlers = {})
     showPopup(`${data.label}\n${msg}`, scr.x, scr.y);
   }
 
-  /** 屏幕坐标 → NDC → 射线拾取 */
-  function pickAt(clientX, clientY) {
+  /** 屏幕坐标 → NDC → 射线，返回命中信息（不执行交互） */
+  function cast(clientX, clientY) {
     const rect = renderer.domElement.getBoundingClientRect();
     ndc.set(
       ((clientX - rect.left) / rect.width) * 2 - 1,
@@ -180,8 +196,21 @@ export function createInteraction(scene, camera, renderer, world, handlers = {})
     } else {
       point = hit.point;
     }
-    handlePick(data, point, entry.root);
-    return data;
+    return { data, point, root: entry.root };
+  }
+
+  /** 屏幕坐标 → 射线拾取 */
+  function pickAt(clientX, clientY) {
+    const r = cast(clientX, clientY);
+    if (!r) return null;
+    handlePick(r.data, r.point, r.root);
+    return r.data;
+  }
+
+  /** 纯探测：只返回命中交互数据（用于光标/准星反馈），不触发任何交互 */
+  function probe(clientX, clientY) {
+    const r = cast(clientX, clientY);
+    return r ? r.data : null;
   }
 
   /** FPS 锁定时 E 键：拾取屏幕中心 */
@@ -231,5 +260,5 @@ export function createInteraction(scene, camera, renderer, world, handlers = {})
     if (popupEl) popupEl.classList.remove('show');
   }
 
-  return { pickAt, pickCenter, update, reset };
+  return { pickAt, pickCenter, probe, update, reset, burstAt: spawnBurst };
 }

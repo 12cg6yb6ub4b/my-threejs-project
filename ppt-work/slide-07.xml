@@ -1,0 +1,85 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(20, 28, 24, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.07 / HIGHLIGHT 02</p>
+    </content>
+  </shape>
+  <img src="AiQ5b4L8QoSfuPxmTpHcJQ1nnMf" topLeftX="620" topLeftY="60" width="300" height="465"/>
+  <shape type="text" topLeftX="60" topLeftY="74" width="440" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER FIVE · 核心技术 02</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="110" width="520" height="52">
+    <content textType="title" fontSize="32" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" letterSpacing="2" wrap="false">
+      <p>阴影，覆盖整座小镇</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="170" width="520" height="24">
+    <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+      <p>SHADOWS EVERYWHERE</p>
+    </content>
+  </shape>
+  <line startX="60" startY="210" endX="110" endY="210">
+    <border color="rgba(196, 169, 107, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="226" width="300" height="100">
+    <content textType="title" fontSize="80" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="2" wrap="false">
+      <p>±90°</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="332" width="460" height="28">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" letterSpacing="1" wrap="false">
+      <p>阴影投影覆盖范围 · 整座小镇都被笼罩</p>
+    </content>
+  </shape>
+  <line startX="60" startY="378" endX="560" endY="378">
+    <border color="rgba(255, 255, 255, 0.14)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="394" width="160" height="40">
+    <content textType="title" fontSize="28" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" wrap="false">
+      <p>6144²</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="236" topLeftY="398" width="330" height="36">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" lineSpacing="multiple:1.3">
+      <p>阴影贴图分辨率，远场景依旧锐利</p>
+    </content>
+  </shape>
+  <line startX="60" startY="440" endX="560" endY="440">
+    <border color="rgba(255, 255, 255, 0.14)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="456" width="160" height="40">
+    <content textType="title" fontSize="28" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" wrap="false">
+      <p>3×3</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="236" topLeftY="460" width="330" height="36">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" lineSpacing="multiple:1.3">
+      <p>高斯采样软阴影，边缘自然过渡不闪烁</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="506" width="440" height="24">
+    <content textType="body" fontSize="12" fontFamily="思源宋体" color="rgba(196, 169, 107, 0.9)" letterSpacing="2" wrap="false">
+      <p>── 建筑 · 植被 · 角色，共享同一套投影 ──</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>阴影是本项目另一个关键难题：默认的软阴影渲染会导致建筑消失，场景并不完整。</p>
+    <p>我们最终用大范围方向光窗口加超高分辨率阴影贴图，配合自定义高斯采样软阴影，让阴影稳定覆盖整座小镇。</p>
+    <p>无论从哪个视角看，阴影都始终在场，不再跟随镜头。</p>
+  </content>
+</note>
+</slide>

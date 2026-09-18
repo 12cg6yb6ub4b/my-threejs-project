@@ -1,0 +1,61 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data>
+  <img src="Q7JRbwYcUoI3H4xbLa2c8eDTnPw" topLeftX="0" topLeftY="0" width="960" height="540"/>
+  <shape type="rect" topLeftX="0" topLeftY="0" width="960" height="540">
+    <fill><fillColor color="rgba(20, 30, 26, 0.8)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="72" topLeftY="72" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="880" topLeftY="72" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="72" topLeftY="460" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <shape type="rect" topLeftX="880" topLeftY="460" width="8" height="8">
+    <fill><fillColor color="rgba(196, 169, 107, 1)"/></fill>
+  </shape>
+  <line startX="80" startY="64" endX="880" endY="64">
+    <border color="rgba(196, 169, 107, 0.6)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="80" topLeftY="30" width="300" height="24">
+    <content textType="caption" fontSize="11" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="320" topLeftY="128" width="320" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" textAlign="center" wrap="false">
+      <p>（ 品牌愿景 · Brand Vision ）</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="196" width="600" height="64">
+    <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" textAlign="center" letterSpacing="4" wrap="false">
+      <p>愿每座森林，都有一座</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="264" width="600" height="64">
+    <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" textAlign="center" letterSpacing="4" wrap="false">
+      <p>可以走进去的小镇</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="180" topLeftY="344" width="600" height="28">
+    <content textType="caption" fontSize="12" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" textAlign="center" letterSpacing="4" wrap="false">
+      <p>MAY EVERY WOOD HAVE A TOWN TO ENTER</p>
+    </content>
+  </shape>
+  <line startX="430" startY="400" endX="530" endY="400">
+    <border color="rgba(196, 169, 107, 0.6)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="180" topLeftY="444" width="600" height="32">
+    <content textType="body" fontSize="15" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" textAlign="center" letterSpacing="6" wrap="false">
+      <p>谢 谢 观 看 · 欢 迎 漫 步</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>最后，我们想保留的愿景很简单：让童话不只在书页里，而是随时可以走进的一座小镇。</p>
+    <p>感谢观看，也欢迎在浏览器里亲自漫步一圈。</p>
+  </content>
+</note>
+</slide>

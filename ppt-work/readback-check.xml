@@ -1,0 +1,11 @@
+<presentation id="AQw8s2bxHlg9TCdMOZ5crytXnyh" xmlns="https://www.larkoffice.com/sml/2.0" width="960" height="540">
+  <title>Lusion 唯美绘 · 林间童话小镇</title>
+  <theme>
+    <textStyles>
+      <headline fontColor="rgba(31, 35, 41, 1)"/>
+      <sub-headline fontColor="rgba(31, 35, 41, 1)"/>
+      <body fontColor="rgba(31, 35, 41, 1)"/>
+      <caption fontColor="rgba(155, 158, 162, 1)" fontSize="14"/>
+    </textStyles>
+  </theme>
+</presentation>

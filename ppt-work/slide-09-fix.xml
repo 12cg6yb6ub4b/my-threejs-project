@@ -1,0 +1,113 @@
+<slide id="pEO">
+    <style>
+      <fill id="fEO">
+        <fillColor color="rgba(30, 48, 36, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bno" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bnE">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bnc">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.09 / INTERACTION</p>
+        </content>
+      </shape>
+      <img id="bTO" src="DylFbPdhhoI11RxhJWpc9Jefnrh" width="300" height="465" topLeftX="640" topLeftY="60">
+        <crop type="rect" leftOffset="58.46122778675283" rightOffset="58.46122778675283" topOffset="0" bottomOffset="0"/>
+      </img>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bns">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER SIX · 交互玩法</p>
+        </content>
+      </shape>
+      <shape width="520" height="52" topLeftX="60" topLeftY="110" type="text" id="bnQ">
+        <content textType="title" fontSize="34" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>走进小镇，像翻动绘本</p>
+        </content>
+      </shape>
+      <shape width="520" height="24" topLeftX="60" topLeftY="170" type="text" id="bnl">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>PLAY · WALK · EXPLORE</p>
+        </content>
+      </shape>
+      <line id="bnK" startX="60" startY="210" endX="110.00999900019994" endY="210">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="44" height="34" topLeftX="60" topLeftY="232" type="text" id="bTV">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>01</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="230" type="text" id="bTJ">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>漫游模式</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="258" type="text" id="bnT">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>WASD 移动 · 空格跳跃 · Shift 疾跑</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="308" type="text" id="bnk">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>02</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="306" type="text" id="bnD">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>俯视模式</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="334" type="text" id="bnL">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>一键上帝视角，俯瞰整座小镇</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="384" type="text" id="bTI">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>03</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="382" type="text" id="bTw">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>昼夜切换</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="410" type="text" id="bnn">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>白天 / 黄昏 / 夜晚，或开启自动流转</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="460" type="text" id="bnu">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>04</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="458" type="text" id="bng">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>任务信物</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="486" type="text" id="bnf">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>E 键互动 · 收集信物 · 触发机关</p>
+        </content>
+      </shape>
+      <line id="bTX" startX="60" startY="522" endX="600.0009259251322" endY="522">
+        <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+      </line>
+    </data>
+    <note id="bnv">
+      <content>
+        <p>交互是这座小镇的入口：第一人称漫步配合俯视浏览，兼顾沉浸与全局。</p>
+        <p>昼夜与自动流转让时间流动起来；信物与机关构成轻量的探索目标。</p>
+        <p>最后一页，我想用一句话收束整个项目。</p>
+      </content>
+    </note>
+  </slide>

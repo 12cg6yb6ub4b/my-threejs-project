@@ -1,0 +1,80 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(245, 240, 232, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.7)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.06 / HIGHLIGHT 01</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="74" width="440" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER FIVE · 核心技术 01</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="110" width="480" height="60">
+    <content textType="title" fontSize="32" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" letterSpacing="2" wrap="false">
+      <p>每一步，都踩在真实地形上</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="178" width="480" height="24">
+    <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" letterSpacing="4" wrap="false">
+      <p>TERRAIN THAT HOLDS YOU</p>
+    </content>
+  </shape>
+  <line startX="60" startY="218" endX="110" endY="218">
+    <border color="rgba(160, 132, 72, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="240" width="80" height="30">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>网格地形</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="272" width="480" height="36">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.85)" lineSpacing="multiple:1.4">
+      <p>程序化生成起伏草甸，行走与放置全部吸附真实高度，不再悬空。</p>
+    </content>
+  </shape>
+  <line startX="60" startY="322" endX="520" endY="322">
+    <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="340" width="80" height="30">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>高度采样</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="372" width="480" height="36">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.85)" lineSpacing="multiple:1.4">
+      <p>角色脚底按网格插值取高，行走、跳跃与物件落位保持稳定贴合。</p>
+    </content>
+  </shape>
+  <line startX="60" startY="422" endX="520" endY="422">
+    <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="440" width="80" height="30">
+    <content textType="body" fontSize="14" bold="true" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" wrap="false">
+      <p>量化验证</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="472" width="480" height="36">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.85)" lineSpacing="multiple:1.4">
+      <p>20,000 个采样点平均残差 0.0109，贴合误差降到肉眼不可见。</p>
+    </content>
+  </shape>
+  <img src="ArH2bQy8AoNwmtxPQZDchPaqn0H" topLeftX="580" topLeftY="60" width="320" height="480"/>
+</data>
+<note>
+  <content textType="body">
+    <p>地形是本项目第一个关键难题：程序化生成的起伏草甸，如何让所有物体稳稳站在上面。</p>
+    <p>我们用网格高度查询 + 双线性插值，让角色与物件吸附真实高度。</p>
+    <p>最终用两万个采样点量化验证，平均残差只有 0.0109，肉眼几乎不可见。</p>
+  </content>
+</note>
+</slide>

@@ -1,0 +1,104 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(20, 28, 24, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.05 / ARCHITECTURE</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="74" width="440" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER FOUR · 技术架构</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="112" width="360" height="52">
+    <content textType="title" fontSize="34" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" letterSpacing="2" wrap="false">
+      <p>轻量工程，模块分明</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="172" width="360" height="24">
+    <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+      <p>BUILT WITH THREE.JS R185</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="212" width="340" height="120">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" lineSpacing="multiple:1.6">
+      <p>原生 Three.js + Vite 构建，不依赖重量级框架。渲染、材质、氛围、交互、任务各司其职，主循环统一编排。</p>
+    </content>
+  </shape>
+  <line startX="60" startY="352" endX="110" endY="352">
+    <border color="rgba(196, 169, 107, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="368" width="340" height="120">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.75)" lineSpacing="multiple:1.6">
+      <p>自定义着色器直接采样阴影贴图，实现柔和软阴影；材质、氛围与后期三层共同塑造画面真实感。</p>
+    </content>
+  </shape>
+  <table topLeftX="440" topLeftY="120" width="460" height="392">
+    <colgroup>
+      <col width="150"/>
+      <col width="310"/>
+    </colgroup>
+    <tr height="32">
+      <td>
+        <fill><fillColor color="rgba(16, 22, 18, 1)"/></fill>
+        <content textType="body" fontSize="11" bold="true" color="rgba(196, 169, 107, 1)" textAlign="left"><p>模块</p></content>
+      </td>
+      <td>
+        <fill><fillColor color="rgba(16, 22, 18, 1)"/></fill>
+        <content textType="body" fontSize="11" bold="true" color="rgba(196, 169, 107, 1)" textAlign="left"><p>职责</p></content>
+      </td>
+    </tr>
+    <tr height="45">
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>world.js</p></content></td>
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>场景组装 · 地形生成</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>shaders.js</p></content></td>
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>自定义材质 · SSS 花朵 · 水面</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>atmosphere.js</p></content></td>
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>昼夜切换 · 雾与天空</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>controls.js</p></content></td>
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>漫游 · 俯视 · 缩放</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>particles.js</p></content></td>
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>光点 · 花瓣 · 萤火</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>postfx.js</p></content></td>
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>泛光 · 色彩合成</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>quest.js</p></content></td>
+      <td><fill><fillColor color="rgba(255, 255, 255, 0.04)"/></fill><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>信物收集 · 机关互动</p></content></td>
+    </tr>
+    <tr height="45">
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.9)" textAlign="left"><p>main.js</p></content></td>
+      <td><content textType="body" fontSize="11" color="rgba(255, 255, 255, 0.7)" textAlign="left"><p>渲染主循环 · 状态编排</p></content></td>
+    </tr>
+  </table>
+  <line startX="440" startY="532" endX="900" endY="532">
+    <border color="rgba(196, 169, 107, 0.25)" width="1"/>
+  </line>
+</data>
+<note>
+  <content textType="body">
+    <p>整个工程按职责拆分为八个模块，主循环统一驱动。</p>
+    <p>视觉表现的关键在 shaders 与 atmosphere：自定义材质负责花朵与水面的质感，氛围系统负责昼夜与雾。</p>
+    <p>下一页开始，我会展开三项核心技术。</p>
+  </content>
+</note>
+</slide>

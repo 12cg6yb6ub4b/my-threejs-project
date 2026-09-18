@@ -1,0 +1,7 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><data>
+  <shape type="text" topLeftX="80" topLeftY="80" width="400" height="60">
+    <content textType="title" fontSize="32" fontFamily="思源宋体" color="rgba(31, 35, 41, 1)" wrap="false">
+      <p>测试页</p>
+    </content>
+  </shape>
+</data></slide>

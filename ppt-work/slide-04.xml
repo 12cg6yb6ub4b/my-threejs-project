@@ -1,0 +1,97 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0"><style>
+  <fill><fillColor color="rgba(30, 48, 36, 1)"/></fill>
+</style><data>
+  <line startX="60" startY="52" endX="900" endY="52">
+    <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="24" width="300" height="24">
+    <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" wrap="false">
+      <p>LUSION · 唯美绘</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="720" topLeftY="24" width="180" height="24">
+    <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.65)" letterSpacing="2" textAlign="right" wrap="false">
+      <p>P.04 / SCENERY</p>
+    </content>
+  </shape>
+  <img src="G9dwbxOCsoSutaxcxgvc6Ql9nnd" topLeftX="650" topLeftY="60" width="310" height="480"/>
+  <shape type="text" topLeftX="60" topLeftY="74" width="440" height="30">
+    <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>● CHAPTER THREE · 场景内容</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="112" width="520" height="52">
+    <content textType="title" fontSize="36" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" letterSpacing="2" wrap="false">
+      <p>林间深处，万物有灵</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="172" width="520" height="24">
+    <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+      <p>WHAT LIVES IN THE WOODS</p>
+    </content>
+  </shape>
+  <line startX="60" startY="212" endX="110" endY="212">
+    <border color="rgba(196, 169, 107, 1)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="240" width="56" height="40">
+    <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" wrap="false">
+      <p>01</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="238" width="460" height="44">
+    <content textType="body" fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.95)" wrap="false">
+      <p>建筑群落</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="266" width="460" height="24">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+      <p>主屋 · 凉亭 · 风车 · 钟楼 · 蘑菇屋 · 画廊</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="324" width="56" height="40">
+    <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" wrap="false">
+      <p>02</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="322" width="460" height="44">
+    <content textType="body" fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.95)" wrap="false">
+      <p>自然景观</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="350" width="460" height="24">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+      <p>古树 · 草甸 · 溪流 · 喷泉 · 低多边形植被</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="60" topLeftY="408" width="56" height="40">
+    <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" wrap="false">
+      <p>03</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="406" width="460" height="44">
+    <content textType="body" fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.95)" wrap="false">
+      <p>互动细节</p>
+    </content>
+  </shape>
+  <shape type="text" topLeftX="132" topLeftY="434" width="460" height="24">
+    <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+      <p>木牌 · 信物 · 任务机关 · 夜灯</p>
+    </content>
+  </shape>
+  <line startX="60" startY="496" endX="600" endY="496">
+    <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+  </line>
+  <shape type="text" topLeftX="60" topLeftY="462" width="520" height="28">
+    <content textType="body" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+      <p>── 走 进 小 镇，处 处 有 惊 喜 ──</p>
+    </content>
+  </shape>
+</data>
+<note>
+  <content textType="body">
+    <p>小镇的内容分为三部分：建筑、自然与互动细节。</p>
+    <p>建筑群落包含六种结构；自然景观用低多边形植被铺满林间；互动细节包括木牌、信物与任务机关。</p>
+    <p>每个角落都值得走近看一看。</p>
+  </content>
+</note>
+</slide>

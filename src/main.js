@@ -11,13 +11,14 @@
  * ============================================================
  */
 import * as THREE from 'three';
-import { skyMaterial, lightGradientMaterial } from './shaders.js';
+import { skyMaterial, lightGradientMaterial, setArtStyle } from './shaders.js';
 import { createWorld, makeArtCanvas } from './world.js';
 import { createParticles } from './particles.js';
 import { createAtmosphere, PRESETS } from './atmosphere.js';
 import { setupPostFX, setOutlineObjects } from './postfx.js';
 import { createControls } from './controls.js';
 import { createInteraction } from './interaction.js';
+import { createQuest } from './quest.js';
 /* ----------------------------------------------------------
  * 1. 渲染器 / 场景 / 相机
  * ---------------------------------------------------------- */
@@ -25,20 +26,24 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure =0.95;
+renderer.toneMappingExposure = 1.0;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 // ==========开启阴影==========
 renderer.shadowMap.enabled = true;
-// BasicShadowMap：深度贴图无比较采样，配合自定义着色器手动深度比较，
-// 规避 WebKit/SwiftShader 环境下 PCF 比较采样不可靠的问题
+// BasicShadowMap：阴影贴图使用 RGBA 深度打包格式，自定义着色器的
+// SHADOW_BLOCK（3×3 高斯 PCF 软阴影）用 sampler2D 直接采样 .r 合法。
+// 注意：不要切到 PCFSoftShadowMap——three r185 在该类型下改用 DepthTexture
+// （深度/模板格式），与自定义材质的 sampler2D 采样类型不匹配，WebGL 会
+// 拒绝绘制所有接收阴影的物体（建筑墙/屋顶消失），产生
+// "Mismatch between texture format and sampler type" 错误。
 renderer.shadowMap.type = THREE.BasicShadowMap;
 renderer.shadowMap.width = 2048;
 renderer.shadowMap.height = 2048;
 
 document.body.appendChild(renderer.domElement);
 const scene = new THREE.Scene();
-scene.fog = new THREE.Fog('#e4eedf', 22, 95);
+scene.fog = new THREE.Fog('#e4eedf', 34, 130);
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 300);
 camera.position.set(-7, 1.7, 7);   // 初始：小镇斜前方
 camera.lookAt(0, 2, 0);
@@ -56,9 +61,25 @@ gradientMesh.scale.set(1, 1.15, 1);
 scene.add(gradientMesh);
 
 /* ----------------------------------------------------------
+ * 2.5 美术风格（默认低多边形清新风；?style=picturebook 切回绘本水彩风）
+ * ---------------------------------------------------------- */
+const ART_STYLE = new URLSearchParams(location.search).get('style') === 'picturebook' ? 'picturebook' : 'lowpoly';
+setArtStyle(ART_STYLE);
+/* ----------------------------------------------------------
  * 3. 童话小镇
  * ---------------------------------------------------------- */
 const world = createWorld(scene);
+/* ----------------------------------------------------------
+ * 3.5 寻物任务（星光信物）· 支持 ?quest=off 关闭，保留纯观赏模式
+ * ---------------------------------------------------------- */
+let quest = null;
+const questEnabled = new URLSearchParams(location.search).get('quest') !== 'off';
+if (questEnabled) {
+  quest = createQuest(scene, world, {
+    camera,
+    celebrate: (p, c) => { if (interaction) interaction.burstAt(p, c); },  // interaction 在下方创建，回调仅在胜利时调用
+  });
+}
 /* ----------------------------------------------------------
  * 4. 氛围粒子
  * ---------------------------------------------------------- */
@@ -68,6 +89,7 @@ const particles = createParticles(scene);
  * ---------------------------------------------------------- */
 const postfx = setupPostFX(renderer, scene, camera);
 setOutlineObjects(postfx.outlinePass, [world.group]);
+postfx.outlinePass.enabled = ART_STYLE === 'picturebook';   // 低多边形风关闭卡通描边
 /* ----------------------------------------------------------
  * 6. 昼夜光照氛围
  * ---------------------------------------------------------- */
@@ -84,15 +106,17 @@ scene.traverse((o) => {
     if (m.uniforms && m.uniforms.uDeep && m.uniforms.uShallow && m.uniforms.uSparkle) atmoWaterMats.add(m);
   }
 });
-const atmosphere = createAtmosphere(scene, renderer, postfx.bloomPass, {
-  skyMesh,
+const atmosphere = createAtmosphere(scene, renderer, postfx.bloomPass, {  skyMesh,
   // p：预设或插值结果；index>=0 为手动切换，-1 为自动流转
   onAtmosphereChange(p, index){
+    // 任务信物夜晚发光 + 面板亮度自适应（综合 glowWin 计算暗度）
+    const darkness = THREE.MathUtils.clamp((p.glowWin - 0.85) / 0.95, 0, 1);
+    if (quest) quest.setNightFactor(darkness);
     gradientMat.uniforms.uLightColor.value.set(p.sky.sunColor);
     gradientMat.uniforms.uShadowColor.value.set(p.sky.top);
-    // 罩层强度：按天空顶色对三档预设做反距离加权，自动流转时平滑过渡
+    // 罩层强度：按天空顶色对三档预设做反距离加权，自动流转时平滑过渡（调低，减少画面朦胧）
     const tops = [PRESETS[0].sky.top, PRESETS[1].sky.top, PRESETS[2].sky.top];
-    const ws = [0.06, 0.08, 0.05];   // 白天 / 黄昏 / 夜晚
+    const ws = [0.03, 0.045, 0.04];   // 白天 / 黄昏 / 夜晚
     const pColor = new THREE.Color(p.sky.top);
     let total = 0, sum = 0;
     for (let i = 0; i < 3; i++) {
@@ -103,9 +127,14 @@ const atmosphere = createAtmosphere(scene, renderer, postfx.bloomPass, {
       sum += w * ws[i];
     }
     gradientMat.uniforms.uIntensity.value = sum / total;
-    // 氛围染色：地面/建筑/植被乘 uTint（白天白/黄昏暖/夜晚冷暗），水面换色
+    // 氛围染色：地面/建筑/植被乘 uTint（白天白/黄昏暖/夜晚冷暗），并同步高光/暗部色
     const tint = new THREE.Color(p.tint || '#ffffff');
-    atmoTintMats.forEach((m) => { m.uniforms.uTint.value.copy(tint); });
+    atmoTintMats.forEach((m) => {
+      m.uniforms.uTint.value.copy(tint);
+      // 高光/暗部随氛围切换（黄昏暖高光、夜晚冷蓝高光），让物体保持明暗层次
+      if (m.uniforms.uLightTop && p.lightTop) m.uniforms.uLightTop.value.set(p.lightTop);
+      if (m.uniforms.uLightBottom && p.lightBottom) m.uniforms.uLightBottom.value.set(p.lightBottom);
+    });
     if (p.waterDeep) {
       const wDeep = new THREE.Color(p.waterDeep), wShallow = new THREE.Color(p.waterShallow), wSpark = new THREE.Color(p.waterSparkle);
       atmoWaterMats.forEach((m) => {
@@ -123,6 +152,8 @@ const atmosphere = createAtmosphere(scene, renderer, postfx.bloomPass, {
     }
   }
 });
+// 主光源固定方向（阴影窗口固定在世界中心，太阳方向保持不变）
+const SUN_DIR = new THREE.Vector3().copy(PRESETS[0].sun.pos).normalize();
 /* ----------------------------------------------------------
  * 6.5 射线拾取交互（先于控制器，供触屏轻点 / E 键回调）
  * ---------------------------------------------------------- */
@@ -153,13 +184,22 @@ galleryPanel.addEventListener('click', (e) => {
 });
 const interaction = createInteraction(scene, camera, renderer, world, {
   onGallery: openGallery,
+  onQuest: (data, point) => { if (quest) quest.collect(data.itemId); },
+  onNpc: () => { if (quest) quest.talkToNpc(); },
+  onPanel: (data) => { if (quest) quest.showItemHint(data.itemId); },
 });
 /* ----------------------------------------------------------
  * 7. 交互控制
  * ---------------------------------------------------------- */
 const controls = createControls(camera, renderer.domElement, world.terrainHeight, {
+  colliders: world.colliders,                   // 物体碰撞体（树/建筑/NPC/面板，防穿模）
   onPick: (x, y) => interaction.pickAt(x, y),          // 移动端轻点拾取
-  onInteract: () => interaction.pickCenter(),          // FPS 锁定时 E 键中心拾取
+  onInteract: () => {                                   // FPS 锁定时 E 键中心拾取
+    if (quest && quest.isDialogOpen()) return;          // 对话中 E 只推进对话
+    const r = interaction.pickCenter();
+    if (!r && quest) quest.tryProximity();              // 没瞄中但靠近 NPC 时兜底
+  },
+  onProbe: (x, y) => interaction.probe(x, y),           // 光标/准星探测（只检测不触发）
 });
 /* ----------------------------------------------------------
  * 8. UI 绑定
@@ -209,23 +249,7 @@ function bindUI() {
       document.getElementById('hint').style.opacity = m === 'fps' ? 1 : 0.25;
     });
   });
-  // 截图导出
-  document.getElementById('btnShot').addEventListener('click', captureShot);
-  // 场景重置：相机回初始位 + 恢复自动流转 + 清理交互状态
-  document.getElementById('btnReset').addEventListener('click', () => {
-    controls.reset();
-    btnAuto.classList.add('active');
-    atmosphere.setAuto(true);
-    viewButtons.forEach((b) => b.classList.toggle('active', b.dataset.view === 'fps'));
-    document.getElementById('hint').style.opacity = 1;
-    interaction.reset();
-  });
-  // 帮助：切换提示显隐
-  let hintVisible = true;
-  document.getElementById('btnHint').addEventListener('click', () => {
-    hintVisible = !hintVisible;
-    document.getElementById('hint').style.opacity = hintVisible ? 1 : 0;
-  });
+  // 工具按钮已删除，相关事件监听一并移除
 }
 bindUI();
 /* ----------------------------------------------------------
@@ -259,13 +283,21 @@ function animate() {
     }
   });
 
-  // 全局渐变：跟随太阳光方向
-  if(atmosphere.sun){
-    gradientMat.uniforms.uLightDir.value.copy(atmosphere.sun.position).normalize();
-  }
+  // 全局渐变：跟随太阳光方向（固定方向，不随阴影窗口平移）
+  gradientMat.uniforms.uLightDir.value.copy(SUN_DIR);
 
   // 环境随时间自动流转（白天→黄昏→夜晚→黎明）
   atmosphere.update(dt);
+
+  // 阴影窗口固定在世界中心：太阳方向固定不变，阴影贴图始终覆盖整个场景圆盘（±100），不随相机视角移动
+  if (atmosphere.sun) {
+    const sun = atmosphere.sun;
+    sun.target.position.set(0, 0, 0);
+    sun.position.copy(sun.target.position).addScaledVector(SUN_DIR, 100);
+    sun.target.updateMatrixWorld();
+    sun.updateMatrixWorld();
+    sun.shadow.camera.updateProjectionMatrix();
+  }
 
   // 喷泉：水花粒子 + 水柱动画
   if (world.fountain && world.fountain.userData.update) {
@@ -288,6 +320,8 @@ function animate() {
 
   // 粒子更新
   particles.update(dt, elapsed);
+  // 寻物任务（NPC / 信物动画）
+  if (quest) quest.update(dt, elapsed);
   // 交互系统（爆发粒子 + 摆动动画）
   interaction.update(dt);
   // 控制更新

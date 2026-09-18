@@ -44,6 +44,31 @@ export function createControls(camera, dom, terrainHeight, opts = {}) {
   const smoothVel = new THREE.Vector3();
   const moveDir = new THREE.Vector3();
 
+  // ---- 物体碰撞（防穿模）：圆柱碰撞体 + 身体半径 + 高度豁免可跨越 ----
+  const BODY_R = 0.45;                       // 玩家身体半径
+  const colliders = opts.colliders || [];    // [{ x, z, r, h }]
+  function collideWithObjects() {
+    for (let iter = 0; iter < 2; iter++) {   // 两次迭代，避免多物体夹缝卡住
+      let hit = false;
+      for (const c of colliders) {
+        const dx = camera.position.x - c.x;
+        const dz = camera.position.z - c.z;
+        const rr = c.r + BODY_R;
+        const d2 = dx * dx + dz * dz;
+        if (d2 < rr * rr && d2 > 1e-9) {
+          // 高度豁免：玩家脚底高于障碍顶（站在坡上/跳过矮物）→ 允许穿过
+          const footY = camera.position.y - EYE_HEIGHT;
+          if (footY > terrainHeight(c.x, c.z) + c.h) continue;
+          const d = Math.sqrt(d2);
+          camera.position.x = c.x + dx / d * rr;
+          camera.position.z = c.z + dz / d * rr;
+          hit = true;
+        }
+      }
+      if (!hit) break;
+    }
+  }
+
   // ---- 俯视视角（小镇中心环绕）----
   const orbitCenter = new THREE.Vector3(0, 6, 0);
   let orbitAngle = 0;
@@ -67,6 +92,70 @@ export function createControls(camera, dom, terrainHeight, opts = {}) {
       if (p && typeof p.catch === 'function') p.catch(() => {});
     } catch (err) { /* 指针锁定被浏览器拒绝时静默降级 */ }
   }
+
+  /* ==========================================================
+   * 鼠标光标 & 准星（FPS 锁定后显示，命中可交互物时高亮）
+   * ========================================================== */
+  let crosshairEl = null;
+  let crosshairLabel = null;
+  function buildCrosshair() {
+    if (document.getElementById('crosshair')) return;
+    crosshairEl = document.createElement('div');
+    crosshairEl.id = 'crosshair';
+    crosshairEl.innerHTML = '<span class="ch-dot"></span>';
+    document.body.appendChild(crosshairEl);
+    crosshairLabel = document.createElement('div');
+    crosshairLabel.id = 'crosshairLabel';
+    document.body.appendChild(crosshairLabel);
+  }
+  buildCrosshair();
+
+  function setCrosshair(visible) {
+    if (crosshairEl) crosshairEl.classList.toggle('show', visible);
+    if (crosshairLabel) crosshairLabel.classList.toggle('show', visible);
+  }
+  function setCrosshairHit(data) {
+    if (!crosshairEl) return;
+    crosshairEl.classList.toggle('hit', !!data);
+    if (crosshairLabel) {
+      crosshairLabel.textContent = data && data.label ? data.label : '';
+      crosshairLabel.classList.toggle('show', !!(data && data.label));
+    }
+  }
+
+  // 光标/准星探测（80ms 节流，避免每帧射线开销）
+  let lastProbe = 0;
+  function probeAt(clientX, clientY) {
+    const now = performance.now();
+    if (now - lastProbe < 80) return null;
+    lastProbe = now;
+    if (!opts.onProbe) return null;
+    return opts.onProbe(clientX, clientY);
+  }
+
+  // 桌面鼠标移动：非锁定 → 指针样式；锁定 → 准星命中反馈
+  dom.addEventListener('mousemove', (e) => {
+    if (mode === 'orbit') {
+      const data = probeAt(e.clientX, e.clientY);
+      dom.style.cursor = data ? 'pointer' : 'default';
+      return;
+    }
+    if (fps.isLocked) {
+      setCrosshairHit(probeAt(window.innerWidth / 2, window.innerHeight / 2));
+    } else {
+      const data = probeAt(e.clientX, e.clientY);
+      dom.style.cursor = data ? 'pointer' : 'default';
+    }
+  });
+  // 指针锁定状态变化：锁定后显示准星，解锁隐藏并复位光标
+  document.addEventListener('pointerlockchange', () => {
+    const locked = !!document.pointerLockElement;
+    setCrosshair(locked && mode === 'fps');
+    if (!locked) {
+      setCrosshairHit(null);
+      dom.style.cursor = '';
+    }
+  });
 
   /* ==========================================================
    * 移动端触屏控件（虚拟摇杆 + 跳跃键）
@@ -209,6 +298,7 @@ export function createControls(camera, dom, terrainHeight, opts = {}) {
       if (!isTouch) safeLock();
     } else {
       fps.unlock();
+      dom.style.cursor = '';
     }
   }
 
@@ -263,6 +353,9 @@ export function createControls(camera, dom, terrainHeight, opts = {}) {
       smoothVel.z += (moveDir.z - smoothVel.z) * k;
       camera.position.x += smoothVel.x * dt;
       camera.position.z += smoothVel.z * dt;
+
+      // ---- 物体碰撞（树 / 建筑 / NPC / 面板等，防穿模）----
+      collideWithObjects();
 
       // ---- 重力跳跃物理（帧时间联动）----
       if (onGround && jumpQueued) { vy = JUMP_SPEED; onGround = false; jumpQueued = false; }

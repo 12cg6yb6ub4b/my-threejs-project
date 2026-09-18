@@ -15,9 +15,9 @@ export const PRESETS = [
     sun: { color: '#fff6e0', intensity: 2.0, pos: new THREE.Vector3(10, 16, 6) },
     hemi: { sky: '#cfe8ff', ground: '#9db88a', intensity: 0.85 },
     ambient: { color: '#ffffff', intensity: 0.18 },
-    sky: { top: '#8fc9e8', horizon: '#e8f4e8', sunDir: new THREE.Vector3(0.45, 0.55, 0.35).normalize(), sunColor: '#fff4cf', sunStrength: 0.22 },
-    fog: { color: '#e8f0e4', near: 22, far: 88 },
-    bloom: { strength: 0.24, radius: 0.5, threshold: 0.88 },
+    sky: { top: '#a8d9ef', horizon: '#eef7ec', sunDir: new THREE.Vector3(0.45, 0.55, 0.35).normalize(), sunColor: '#fff8e0', sunStrength: 0.16 },
+    fog: { color: '#e8f0e4', near: 42, far: 160 },
+    bloom: { strength: 0.16, radius: 0.5, threshold: 0.9 },
     bugOpacity: 0.25, sparkOpacity: 0.5, stars: 0.0, glowWin: 0.85,
     // ===== 新增：地面/植物/水体颜色预设 =====
     tint: '#ffffff',                   // 全局染色（纯白=无变化）
@@ -33,9 +33,9 @@ export const PRESETS = [
     sun: { color: '#ffd9a8', intensity: 1.6, pos: new THREE.Vector3(-12, 3.5, 8) },
     hemi: { sky: '#ffd9b8', ground: '#b08a7a', intensity: 0.75 },
     ambient: { color: '#ffd6ad', intensity: 0.22 },
-    sky: { top: '#f2a98b', horizon: '#ffe9cf', sunDir: new THREE.Vector3(-0.5, 0.12, 0.4).normalize(), sunColor: '#ffb36b', sunStrength: 0.45 },
-    fog: { color: '#efc8ae', near: 20, far: 80 },
-    bloom: { strength: 0.38, radius: 0.55, threshold: 0.82 },
+    sky: { top: '#f0ae8e', horizon: '#ffe9cf', sunDir: new THREE.Vector3(-0.5, 0.12, 0.4).normalize(), sunColor: '#ffb36b', sunStrength: 0.32 },
+    fog: { color: '#efc8ae', near: 40, far: 150 },
+    bloom: { strength: 0.28, radius: 0.55, threshold: 0.86 },
     bugOpacity: 0.6, sparkOpacity: 0.75, stars: 0.0, glowWin: 1.1,
     // ===== 黄昏暖色调 =====
     tint: '#f7d6a8',                   // 暖金色染色（草地/树冠变暖黄）
@@ -48,21 +48,21 @@ export const PRESETS = [
   },
   {
     name: 'night', label: '🌙 夜晚',
-    sun: { color: '#7f97d6', intensity: 0.4, pos: new THREE.Vector3(-8, 10, -6) },
-    hemi: { sky: '#0c1430', ground: '#1a2440', intensity: 0.18 },
-    ambient: { color: '#28365c', intensity: 0.05 },
-    sky: { top: '#0e1733', horizon: '#3a4a6a', sunDir: new THREE.Vector3(-0.3, 0.5, -0.3).normalize(), sunColor: '#cfe0ff', sunStrength: 0.35 },
-    fog: { color: '#1c2745', near: 15, far: 75 },
-    bloom: { strength: 0.55, radius: 0.6, threshold: 0.70 },
+    sun: { color: '#7f97d6', intensity: 0.7, pos: new THREE.Vector3(-8, 10, -6) },
+    hemi: { sky: '#0c1430', ground: '#1a2440', intensity: 0.38 },
+    ambient: { color: '#28365c', intensity: 0.16 },
+    sky: { top: '#0e1733', horizon: '#3a4a6a', sunDir: new THREE.Vector3(-0.3, 0.5, -0.3).normalize(), sunColor: '#cfe0ff', sunStrength: 0.3 },
+    fog: { color: '#3a4c72', near: 30, far: 130 },
+    bloom: { strength: 0.45, radius: 0.6, threshold: 0.75 },
     bugOpacity: 1.0, sparkOpacity: 1.0, stars: 1.0, glowWin: 1.8,
-    // ===== 夜晚冷色调 =====
-    tint: '#55647e',                   // 冷灰蓝染色：地面/建筑/植被整体压暗变冷
-    lightTop: '#334d6e',               // 高光冷蓝
-    lightBottom: '#182436',            // 暗部深蓝
+    // ===== 夜晚冷色调（提亮染色，保证树木/建筑/花朵仍可见轮廓） =====
+    tint: '#98a8c4',                   // 冷蓝灰染色：压暗但保留可见度，树/花/屋轮廓清晰
+    lightTop: '#c8d8ee',               // 高光冷蓝（保持亮度，物体明暗层次可见）
+    lightBottom: '#788aa8',            // 暗部亮蓝灰
     waterDeep: '#12203a',              // 深水静蓝
     waterShallow: '#2a4660',           // 浅水蓝灰
     waterSparkle: '#5f87b0',           // 波光冷白带蓝
-    fill: { color: '#3a4a72', intensity: 0.18 },   // 深蓝补光
+    fill: { color: '#3a4a72', intensity: 0.42 },   // 深蓝补光增强，暗部可见
   },
 ];
 /**
@@ -77,16 +77,17 @@ export function createAtmosphere(scene, renderer, bloomPass, opts = {}) {
 
   // 太阳光阴影设置，仅初始化执行一次
   sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048);
-  sun.shadow.camera.near = 1;
-  sun.shadow.camera.far = 130;
-  sun.shadow.camera.left = -95;   // 场景内容覆盖到远景树林(34-56)与环绕群山(86)，扩大相机范围让边缘也有阴影
-  sun.shadow.camera.right = 95;
-  sun.shadow.camera.top = 95;
-  sun.shadow.camera.bottom = -95;
+  sun.shadow.mapSize.set(6144, 6144);
+  sun.shadow.camera.near = 0.5;
+  sun.shadow.camera.far = 200;     // 远平面必须大于“太阳→场景最远点”的深度（约153），否则远离太阳一侧收不到阴影
+  sun.shadow.camera.left = -100;   // 阴影窗口固定在世界中心（main.js 不再跟随相机），±100 完整覆盖半径90的场景圆盘并留边
+  sun.shadow.camera.right = 100;
+  sun.shadow.camera.top = 100;
+  sun.shadow.camera.bottom = -100;
   sun.shadow.radius = 4.5;
-  sun.shadow.bias = -0.0005;
-  sun.shadow.intensity = 0.5;    // 柔和半影：阴影中心保留 ~50% 亮度，增强体积真实感
+  sun.shadow.bias = -0.00035;    // 阴影深度偏置：配合法线偏移消条纹；数值过大会让阴影与物体脱开（peter-panning）
+  sun.shadow.normalBias = 0.04;  // 底层 Lambert 地面（标准材质路径）沿法线偏移，避免密网格自阴影条纹
+  sun.shadow.intensity = 0.85;    // 阴影更实：覆盖全场景后强度提升，体积感更强
 
   const hemi = new THREE.HemisphereLight(PRESETS[0].hemi.sky, PRESETS[0].hemi.ground, PRESETS[0].hemi.intensity);
   scene.add(hemi);

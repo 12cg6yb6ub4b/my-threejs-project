@@ -1,0 +1,1027 @@
+<presentation id="AQw8s2bxHlg9TCdMOZ5crytXnyh" xmlns="https://www.larkoffice.com/sml/2.0" width="960" height="540">
+  <title>Lusion 唯美绘 · 林间童话小镇</title>
+  <theme>
+    <textStyles>
+      <headline fontColor="rgba(31, 35, 41, 1)"/>
+      <sub-headline fontColor="rgba(31, 35, 41, 1)"/>
+      <body fontColor="rgba(31, 35, 41, 1)"/>
+      <caption fontColor="rgba(155, 158, 162, 1)" fontSize="14"/>
+    </textStyles>
+  </theme>
+  <slide id="pEg">
+    <style/>
+    <data>
+      <img id="bvb" src="SbqkbhEFkouLgzxAz7ac1fMsnhd" width="960" height="540.0000000000001" topLeftX="0" topLeftY="-5.684341886080802e-14">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="474.66165413533815" bottomOffset="474.66165413533827"/>
+      </img>
+      <shape width="960" height="540" topLeftX="0" topLeftY="0" presetHandlers="0" type="rect" id="bvU">
+        <fill>
+          <fillColor color="rgba(20, 30, 26, 0.76)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="72" topLeftY="72" presetHandlers="0" type="rect" id="bvx">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="880" topLeftY="72" presetHandlers="0" type="rect" id="bvG">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="72" topLeftY="460" presetHandlers="0" type="rect" id="bvB">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="880" topLeftY="460" presetHandlers="0" type="rect" id="bvy">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <line id="bvL" startX="80" startY="64" endX="880.0006249997559" endY="64">
+        <border color="rgba(196, 169, 107, 0.7)" width="1"/>
+      </line>
+      <shape width="400" height="28" topLeftX="80" topLeftY="28" type="text" id="bvd">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="600" height="44" topLeftX="180" topLeftY="196" type="text" id="bvq">
+        <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" letterSpacing="6" textAlign="center" wrap="false">
+          <p>LUSION PICTUREBOOK 3D</p>
+        </content>
+      </shape>
+      <shape width="600" height="100" topLeftX="180" topLeftY="242" type="text" id="bvh">
+        <content textType="title" fontSize="72" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="8" textAlign="center" wrap="false">
+          <p>唯 美 绘</p>
+        </content>
+      </shape>
+      <shape width="600" height="40" topLeftX="180" topLeftY="356" type="text" id="bvZ">
+        <content textType="sub-headline" fontSize="20" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.851)" bold="true" letterSpacing="4" textAlign="center" wrap="false">
+          <p>林间童话小镇 · 一个可漫步的 3D 场景</p>
+        </content>
+      </shape>
+      <shape width="600" height="36" topLeftX="180" topLeftY="440" type="text" id="bvY">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="4" textAlign="center" wrap="false">
+          <p>— 一 座 可 漫 步 的 童 话 小 镇 —</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bvK">
+      <content>
+        <p>大家好，欢迎来到 Lusion 唯美绘。这是一款基于 Three.js 构建的林间童话小镇，一个在浏览器里即可漫步的 3D 交互场景。</p>
+        <p>今天我会带大家走一遍这个项目的视觉成果、技术架构与核心实现。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEM">
+    <style>
+      <fill id="fEM">
+        <fillColor color="rgba(245, 240, 232, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bvk" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bvD">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <img id="bvs" src="SaUQbIRskoLXZwxT0NRcujqOnvh" width="284" height="439.99999999999994" topLeftX="60" topLeftY="76">
+        <crop type="rect" leftOffset="0" rightOffset="-5.684341886080802e-14" topOffset="0.2957393483709154" bottomOffset="0.29573934837094384"/>
+      </img>
+      <shape width="580" height="540" topLeftX="380" topLeftY="0" presetHandlers="0" type="rect" id="bvQ">
+        <fill>
+          <fillColor color="rgba(30, 48, 36, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="480" height="24" topLeftX="420" topLeftY="24" type="text" id="bvl">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.02 / OVERVIEW</p>
+        </content>
+      </shape>
+      <shape width="460" height="30" topLeftX="420" topLeftY="86" type="text" id="bvv">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER ONE · 项目概览</p>
+        </content>
+      </shape>
+      <shape width="500" height="64" topLeftX="420" topLeftY="128" type="text" id="bvu">
+        <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>把童话装进浏览器</p>
+        </content>
+      </shape>
+      <shape width="500" height="28" topLeftX="420" topLeftY="200" type="text" id="bvo">
+        <content textType="caption" fontSize="12" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>A TOWN YOU CAN WALK THROUGH</p>
+        </content>
+      </shape>
+      <line id="bvE" startX="420" startY="238" endX="470.00999900019997" endY="238">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="500" height="170" topLeftX="420" topLeftY="258" type="text" id="bvc">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.851)" lineSpacing="multiple:1.7" letterSpacing="0.5">
+          <p>一座运行在浏览器中的低多边形 3D 场景。</p>
+          <p>林间草甸、溪流环绕，木屋、风车、钟楼、蘑菇屋与画廊错落其间——</p>
+          <p>一座可以漫步、可以互动、可以穿越昼夜的童话小镇。</p>
+        </content>
+      </shape>
+      <line id="bvn" startX="420" startY="496" endX="900.0010416655364" endY="496">
+        <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+      </line>
+      <shape width="500" height="28" topLeftX="420" topLeftY="460" type="text" id="bvg">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>── 森林里的每一盏灯，都为你而亮 ──</p>
+        </content>
+      </shape>
+      <shape width="60" height="22" topLeftX="860" topLeftY="506" type="text" id="bvf">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.502)" textAlign="right" wrap="false">
+          <p>02</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bvT">
+      <content>
+        <p>唯美绘的定位，是把一本童话绘本变成可以走进去的 3D 世界。</p>
+        <p>它运行在浏览器里，无需安装；低多边形的美术风格，让光影与色彩成为主角。</p>
+        <p>接下来的几页，我会分别展示昼夜氛围、场景内容与技术实现。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEF">
+    <style>
+      <fill id="fEF">
+        <fillColor color="rgba(245, 240, 232, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bvt" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bvW">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bvA">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.03 / DAY &amp; NIGHT</p>
+        </content>
+      </shape>
+      <shape width="420" height="30" topLeftX="60" topLeftY="74" type="text" id="bvS">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER TWO · 昼夜流转</p>
+        </content>
+      </shape>
+      <shape width="440" height="56" topLeftX="60" topLeftY="110" type="text" id="bvm">
+        <content textType="title" fontSize="36" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>一日三时，各得其所</p>
+        </content>
+      </shape>
+      <shape width="380" height="56" topLeftX="520" topLeftY="122" type="text" id="bvC">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.851)" textAlign="left">
+          <p>同一座小镇，三种光线语言：白天草甸透亮，黄昏长影暖金，夜晚灯火次第亮起。</p>
+        </content>
+      </shape>
+      <img id="bva" src="VeShbQMbGoM2Vbx5ObPcXbldn0c" width="269" height="300" topLeftX="60" topLeftY="196">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="0.00990990990990781" bottomOffset="0.009909909909936232"/>
+      </img>
+      <img id="bvH" src="NGh2bqnvnoQFWkxeJREc3Aiinlb" width="269" height="300" topLeftX="345" topLeftY="196">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="0.00990990990990781" bottomOffset="0.009909909909936232"/>
+      </img>
+      <img id="bvz" src="WL7cb0a1Ood9xXxvLHUcTzZHnWh" width="269" height="300" topLeftX="630" topLeftY="196">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="0.00990990990990781" bottomOffset="0.009909909909936232"/>
+      </img>
+      <shape width="269" height="20" topLeftX="60" topLeftY="502" type="text" id="bvP">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" letterSpacing="3" textAlign="center" wrap="false">
+          <p>DAY · 白天</p>
+        </content>
+      </shape>
+      <shape width="269" height="20" topLeftX="345" topLeftY="502" type="text" id="bvp">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" letterSpacing="3" textAlign="center" wrap="false">
+          <p>DUSK · 黄昏</p>
+        </content>
+      </shape>
+      <shape width="269" height="20" topLeftX="630" topLeftY="502" type="text" id="bvF">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.6)" letterSpacing="3" textAlign="center" wrap="false">
+          <p>NIGHT · 夜晚</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bvr">
+      <content>
+        <p>昼夜系统是这个场景最直观的体验之一：一键切换白天、黄昏与夜晚，也可以开启自动流转。</p>
+        <p>光线、雾、天空与水面会随时段整体联动，营造完全不同的氛围。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEL">
+    <style>
+      <fill id="fEL">
+        <fillColor color="rgba(30, 48, 36, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bsn" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bsk">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bve">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.04 / SCENERY</p>
+        </content>
+      </shape>
+      <img id="bvX" src="G9dwbxOCsoSutaxcxgvc6Ql9nnd" width="310" height="480" topLeftX="650" topLeftY="60">
+        <crop type="rect" leftOffset="60.18578352180941" rightOffset="60.1857835218093" topOffset="0" bottomOffset="-5.684341886080802e-14"/>
+      </img>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bvO">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER THREE · 场景内容</p>
+        </content>
+      </shape>
+      <shape width="520" height="52" topLeftX="60" topLeftY="112" type="text" id="bsv">
+        <content textType="title" fontSize="36" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>林间深处，万物有灵</p>
+        </content>
+      </shape>
+      <shape width="520" height="24" topLeftX="60" topLeftY="172" type="text" id="bsu">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>WHAT LIVES IN THE WOODS</p>
+        </content>
+      </shape>
+      <line id="bvN" startX="60" startY="212" endX="110.00999900019994" endY="212">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="56" height="40" topLeftX="60" topLeftY="240" type="text" id="bvi">
+        <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>01</p>
+        </content>
+      </shape>
+      <shape width="460" height="44" topLeftX="132" topLeftY="238" type="text" id="bvV">
+        <content fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" wrap="false">
+          <p>建筑群落</p>
+        </content>
+      </shape>
+      <shape width="460" height="24" topLeftX="132" topLeftY="266" type="text" id="bss">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>主屋 · 凉亭 · 风车 · 钟楼 · 蘑菇屋 · 画廊</p>
+        </content>
+      </shape>
+      <shape width="56" height="40" topLeftX="60" topLeftY="324" type="text" id="bso">
+        <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>02</p>
+        </content>
+      </shape>
+      <shape width="460" height="44" topLeftX="132" topLeftY="322" type="text" id="bvj">
+        <content fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" wrap="false">
+          <p>自然景观</p>
+        </content>
+      </shape>
+      <shape width="460" height="24" topLeftX="132" topLeftY="350" type="text" id="bvR">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>古树 · 草甸 · 溪流 · 喷泉 · 低多边形植被</p>
+        </content>
+      </shape>
+      <shape width="56" height="40" topLeftX="60" topLeftY="408" type="text" id="bvJ">
+        <content textType="title" fontSize="22" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>03</p>
+        </content>
+      </shape>
+      <shape width="460" height="44" topLeftX="132" topLeftY="406" type="text" id="bsT">
+        <content fontSize="15" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" wrap="false">
+          <p>互动细节</p>
+        </content>
+      </shape>
+      <shape width="460" height="24" topLeftX="132" topLeftY="434" type="text" id="bsQ">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>木牌 · 信物 · 任务机关 · 夜灯</p>
+        </content>
+      </shape>
+      <line id="bvM" startX="60" startY="496" endX="600.0009259251322" endY="496">
+        <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+      </line>
+      <shape width="520" height="28" topLeftX="60" topLeftY="462" type="text" id="bvI">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>── 走 进 小 镇，处 处 有 惊 喜 ──</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bvw">
+      <content>
+        <p>小镇的内容分为三部分：建筑、自然与互动细节。</p>
+        <p>建筑群落包含六种结构；自然景观用低多边形植被铺满林间；互动细节包括木牌、信物与任务机关。</p>
+        <p>每个角落都值得走近看一看。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEj">
+    <style>
+      <fill id="fEj">
+        <fillColor color="rgba(20, 28, 24, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bsJ" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bTQ">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bTd">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.05 / ARCHITECTURE</p>
+        </content>
+      </shape>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bTs">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER FOUR · 技术架构</p>
+        </content>
+      </shape>
+      <shape width="360" height="52" topLeftX="60" topLeftY="112" type="text" id="bTE">
+        <content textType="title" fontSize="34" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>轻量工程，模块分明</p>
+        </content>
+      </shape>
+      <shape width="360" height="24" topLeftX="60" topLeftY="172" type="text" id="bTg">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>BUILT WITH THREE.JS R185</p>
+        </content>
+      </shape>
+      <shape width="340" height="120" topLeftX="60" topLeftY="212" type="text" id="bTb">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" lineSpacing="multiple:1.6">
+          <p>原生 Three.js + Vite 构建，不依赖重量级框架。渲染、材质、氛围、交互、任务各司其职，主循环统一编排。</p>
+        </content>
+      </shape>
+      <line id="bsR" startX="60" startY="352" endX="110.00999900019994" endY="352">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="340" height="120" topLeftX="60" topLeftY="368" type="text" id="bTv">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" lineSpacing="multiple:1.6">
+          <p>自定义着色器直接采样阴影贴图，实现柔和软阴影；材质、氛围与后期三层共同塑造画面真实感。</p>
+        </content>
+      </shape>
+      <table id="bTD" width="460" height="392" topLeftX="440" topLeftY="120">
+        <colgroup>
+          <col span="1" width="150"/>
+          <col span="1" width="310"/>
+        </colgroup>
+        <tr height="32">
+          <td id="bsi">
+            <fill>
+              <fillColor color="rgba(16, 22, 18, 1)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(196, 169, 107, 1)" bold="true" textAlign="left">
+              <p>模块</p>
+            </content>
+          </td>
+          <td id="bTn">
+            <fill>
+              <fillColor color="rgba(16, 22, 18, 1)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(196, 169, 107, 1)" bold="true" textAlign="left">
+              <p>职责</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTl">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>world.js</p>
+            </content>
+          </td>
+          <td id="bTU">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>场景组装 · 地形生成</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bsX">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>shaders.js</p>
+            </content>
+          </td>
+          <td id="bTT">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>自定义材质 · SSS 花朵 · 水面</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTc">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>atmosphere.js</p>
+            </content>
+          </td>
+          <td id="bsI">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>昼夜切换 · 雾与天空</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTo">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>controls.js</p>
+            </content>
+          </td>
+          <td id="bTf">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>漫游 · 俯视 · 缩放</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTx">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>particles.js</p>
+            </content>
+          </td>
+          <td id="bsV">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>光点 · 花瓣 · 萤火</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTu">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>postfx.js</p>
+            </content>
+          </td>
+          <td id="bsw">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>泛光 · 色彩合成</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bTk">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>quest.js</p>
+            </content>
+          </td>
+          <td id="bTL">
+            <fill>
+              <fillColor color="rgba(255, 255, 255, 0.04)"/>
+            </fill>
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>信物收集 · 机关互动</p>
+            </content>
+          </td>
+        </tr>
+        <tr height="45">
+          <td id="bse">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.902)" textAlign="left">
+              <p>main.js</p>
+            </content>
+          </td>
+          <td id="bsO">
+            <content fontSize="11" fontFamily="思源黑体" color="rgba(255, 255, 255, 0.702)" textAlign="left">
+              <p>渲染主循环 · 状态编排</p>
+            </content>
+          </td>
+        </tr>
+      </table>
+      <line id="bTq" startX="440" startY="532" endX="900.0010869552375" endY="532">
+        <border color="rgba(196, 169, 107, 0.25)" width="1"/>
+      </line>
+    </data>
+    <note id="bTK">
+      <content>
+        <p>整个工程按职责拆分为八个模块，主循环统一驱动。</p>
+        <p>视觉表现的关键在 shaders 与 atmosphere：自定义材质负责花朵与水面的质感，氛围系统负责昼夜与雾。</p>
+        <p>下一页开始，我会展开三项核心技术。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEP">
+    <style>
+      <fill id="fEP">
+        <fillColor color="rgba(245, 240, 232, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bsq" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bsZ">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bsD">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.06 / HIGHLIGHT 01</p>
+        </content>
+      </shape>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bsf">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER FIVE · 核心技术 01</p>
+        </content>
+      </shape>
+      <shape width="480" height="60" topLeftX="60" topLeftY="110" type="text" id="bsb">
+        <content textType="title" fontSize="32" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>每一步，都踩在真实地形上</p>
+        </content>
+      </shape>
+      <shape width="480" height="24" topLeftX="60" topLeftY="178" type="text" id="bsx">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" letterSpacing="4" wrap="false">
+          <p>TERRAIN THAT HOLDS YOU</p>
+        </content>
+      </shape>
+      <line id="bsB" startX="60" startY="218" endX="110.00999900019994" endY="218">
+        <border color="rgba(160, 132, 72, 1)" width="1"/>
+      </line>
+      <shape width="80" height="30" topLeftX="60" topLeftY="240" type="text" id="bsg">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>网格地形</p>
+        </content>
+      </shape>
+      <shape width="480" height="36" topLeftX="60" topLeftY="272" type="text" id="bsc">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.851)" lineSpacing="multiple:1.4">
+          <p>程序化生成起伏草甸，行走与放置全部吸附真实高度，不再悬空。</p>
+        </content>
+      </shape>
+      <line id="bsd" startX="60" startY="322" endX="520.0010869552375" endY="322">
+        <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+      </line>
+      <shape width="80" height="30" topLeftX="60" topLeftY="340" type="text" id="bsh">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>高度采样</p>
+        </content>
+      </shape>
+      <shape width="480" height="36" topLeftX="60" topLeftY="372" type="text" id="bsE">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.851)" lineSpacing="multiple:1.4">
+          <p>角色脚底按网格插值取高，行走、跳跃与物件落位保持稳定贴合。</p>
+        </content>
+      </shape>
+      <line id="bsK" startX="60" startY="422" endX="520.0010869552375" endY="422">
+        <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+      </line>
+      <shape width="80" height="30" topLeftX="60" topLeftY="440" type="text" id="bsU">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>量化验证</p>
+        </content>
+      </shape>
+      <shape width="480" height="36" topLeftX="60" topLeftY="472" type="text" id="bsG">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.851)" lineSpacing="multiple:1.4">
+          <p>20,000 个采样点平均残差 0.0109，贴合误差降到肉眼不可见。</p>
+        </content>
+      </shape>
+      <img id="bsl" src="ArH2bQy8AoNwmtxPQZDchPaqn0H" width="320" height="479.99999999999994" topLeftX="580" topLeftY="60">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="8.220551378446089" bottomOffset="8.220551378446146"/>
+      </img>
+    </data>
+    <note id="bsL">
+      <content>
+        <p>地形是本项目第一个关键难题：程序化生成的起伏草甸，如何让所有物体稳稳站在上面。</p>
+        <p>我们用网格高度查询 + 双线性插值，让角色与物件吸附真实高度。</p>
+        <p>最终用两万个采样点量化验证，平均残差只有 0.0109，肉眼几乎不可见。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pET">
+    <style>
+      <fill id="fET">
+        <fillColor color="rgba(20, 28, 24, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bst" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bsN">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bsz">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.07 / HIGHLIGHT 02</p>
+        </content>
+      </shape>
+      <img id="bsm" src="AiQ5b4L8QoSfuPxmTpHcJQ1nnMf" width="299.99999999999994" height="465" topLeftX="620" topLeftY="60">
+        <crop type="rect" leftOffset="182.58968609865462" rightOffset="182.5896860986548" topOffset="0" bottomOffset="0"/>
+      </img>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bsF">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER FIVE · 核心技术 02</p>
+        </content>
+      </shape>
+      <shape width="520" height="52" topLeftX="60" topLeftY="110" type="text" id="bsH">
+        <content textType="title" fontSize="32" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>阴影，覆盖整座小镇</p>
+        </content>
+      </shape>
+      <shape width="520" height="24" topLeftX="60" topLeftY="170" type="text" id="bsA">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>SHADOWS EVERYWHERE</p>
+        </content>
+      </shape>
+      <line id="bsP" startX="60" startY="210" endX="110.00999900019994" endY="210">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="300" height="100" topLeftX="60" topLeftY="226" type="text" id="bsr">
+        <content textType="title" fontSize="80" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>±90°</p>
+        </content>
+      </shape>
+      <shape width="460" height="28" topLeftX="60" topLeftY="332" type="text" id="bsW">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" letterSpacing="1" wrap="false">
+          <p>阴影投影覆盖范围 · 整座小镇都被笼罩</p>
+        </content>
+      </shape>
+      <line id="bsM" startX="60" startY="378" endX="560.000999999" endY="378">
+        <border color="rgba(255, 255, 255, 0.14)" width="1"/>
+      </line>
+      <shape width="160" height="40" topLeftX="60" topLeftY="394" type="text" id="bsy">
+        <content textType="title" fontSize="28" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>6144²</p>
+        </content>
+      </shape>
+      <shape width="330" height="36" topLeftX="236" topLeftY="398" type="text" id="bsS">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" lineSpacing="multiple:1.3">
+          <p>阴影贴图分辨率，远场景依旧锐利</p>
+        </content>
+      </shape>
+      <line id="bsp" startX="60" startY="440" endX="560.000999999" endY="440">
+        <border color="rgba(255, 255, 255, 0.14)" width="1"/>
+      </line>
+      <shape width="160" height="40" topLeftX="60" topLeftY="456" type="text" id="bsa">
+        <content textType="title" fontSize="28" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>3×3</p>
+        </content>
+      </shape>
+      <shape width="330" height="36" topLeftX="236" topLeftY="460" type="text" id="bsj">
+        <content fontSize="13" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" lineSpacing="multiple:1.3">
+          <p>高斯采样软阴影，边缘自然过渡不闪烁</p>
+        </content>
+      </shape>
+      <shape width="440" height="24" topLeftX="60" topLeftY="506" type="text" id="bsY">
+        <content fontSize="12" fontFamily="思源宋体" color="rgba(196, 169, 107, 0.902)" letterSpacing="2" wrap="false">
+          <p>── 建筑 · 植被 · 角色，共享同一套投影 ──</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bsC">
+      <content>
+        <p>阴影是本项目另一个关键难题：默认的软阴影渲染会导致建筑消失，场景并不完整。</p>
+        <p>我们最终用大范围方向光窗口加超高分辨率阴影贴图，配合自定义高斯采样软阴影，让阴影稳定覆盖整座小镇。</p>
+        <p>无论从哪个视角看，阴影都始终在场，不再跟随镜头。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEv">
+    <style>
+      <fill id="fEv">
+        <fillColor color="rgba(245, 240, 232, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bTt" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(74, 104, 82, 0.3)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bTj">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bTR">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.702)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.08 / HIGHLIGHT 03</p>
+        </content>
+      </shape>
+      <img id="bTG" src="C1ePbSTHDooDXHxTc4acu370ncf" width="470" height="365" topLeftX="60" topLeftY="100">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="0.24800456100342672" bottomOffset="0.24800456100342672"/>
+      </img>
+      <shape width="470" height="22" topLeftX="60" topLeftY="478" type="text" id="bTB">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(74, 104, 82, 0.549)" letterSpacing="2" wrap="false">
+          <p>FIELD OF FLOWERS · 花瓣与溪流微距</p>
+        </content>
+      </shape>
+      <shape width="360" height="30" topLeftX="580" topLeftY="74" type="text" id="bTz">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(160, 132, 72, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER FIVE · 核心技术 03</p>
+        </content>
+      </shape>
+      <shape width="360" height="52" topLeftX="580" topLeftY="110" type="text" id="bTp">
+        <content textType="title" fontSize="30" fontFamily="寒蝉锦书宋" color="rgba(30, 48, 36, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>材质，让童话接近真实</p>
+        </content>
+      </shape>
+      <shape width="360" height="24" topLeftX="580" topLeftY="168" type="text" id="bTa">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" letterSpacing="4" wrap="false">
+          <p>MATERIALS WITH SOUL</p>
+        </content>
+      </shape>
+      <line id="bTM" startX="580" startY="206" endX="630.0099990002" endY="206">
+        <border color="rgba(160, 132, 72, 1)" width="1"/>
+      </line>
+      <shape width="50" height="36" topLeftX="580" topLeftY="228" type="text" id="bTZ">
+        <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>01</p>
+        </content>
+      </shape>
+      <shape width="280" height="26" topLeftX="644" topLeftY="226" type="text" id="bTY">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" bold="true" wrap="false">
+          <p>SSS 花朵</p>
+        </content>
+      </shape>
+      <shape width="280" height="22" topLeftX="644" topLeftY="254" type="text" id="bTS">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+          <p>背光透光 · 菲涅尔描边</p>
+        </content>
+      </shape>
+      <line id="bTW" startX="580" startY="300" endX="900.0015624961853" endY="300">
+        <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+      </line>
+      <shape width="50" height="36" topLeftX="580" topLeftY="314" type="text" id="bTe">
+        <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>02</p>
+        </content>
+      </shape>
+      <shape width="280" height="26" topLeftX="644" topLeftY="312" type="text" id="bTy">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" bold="true" wrap="false">
+          <p>大气散射</p>
+        </content>
+      </shape>
+      <shape width="280" height="22" topLeftX="644" topLeftY="340" type="text" id="bTP">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+          <p>瑞利 + 米氏天空与雾</p>
+        </content>
+      </shape>
+      <line id="bTr" startX="580" startY="386" endX="900.0015624961853" endY="386">
+        <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+      </line>
+      <shape width="50" height="36" topLeftX="580" topLeftY="400" type="text" id="bTF">
+        <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>03</p>
+        </content>
+      </shape>
+      <shape width="280" height="26" topLeftX="644" topLeftY="398" type="text" id="bTH">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" bold="true" wrap="false">
+          <p>水面波光</p>
+        </content>
+      </shape>
+      <shape width="280" height="22" topLeftX="644" topLeftY="426" type="text" id="bTN">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+          <p>太阳高光随视角流动</p>
+        </content>
+      </shape>
+      <line id="bTi" startX="580" startY="472" endX="900.0015624961853" endY="472">
+        <border color="rgba(74, 104, 82, 0.18)" width="1"/>
+      </line>
+      <shape width="50" height="36" topLeftX="580" topLeftY="486" type="text" id="bTh">
+        <content textType="title" fontSize="20" fontFamily="Playfair Display" color="rgba(160, 132, 72, 1)" bold="true" wrap="false">
+          <p>04</p>
+        </content>
+      </shape>
+      <shape width="280" height="26" topLeftX="644" topLeftY="484" type="text" id="bTA">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(30, 48, 36, 1)" bold="true" wrap="false">
+          <p>夜景提亮</p>
+        </content>
+      </shape>
+      <shape width="280" height="22" topLeftX="644" topLeftY="512" type="text" id="bTm">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(74, 104, 82, 0.8)" wrap="false">
+          <p>月光与补光，暗部依旧清晰</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bTC">
+      <content>
+        <p>画面真实感的来源，是四层材质与光照细节。</p>
+        <p>花朵使用次表面散射着色器，逆光时花瓣透光；天空与雾使用大气散射；水面波光随视角变化。</p>
+        <p>夜晚再通过整体提亮与补光，保证暗部细节可读。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEO">
+    <style>
+      <fill id="fEO">
+        <fillColor color="rgba(30, 48, 36, 1)"/>
+      </fill>
+    </style>
+    <data>
+      <line id="bno" startX="60" startY="52" endX="900.0005952378843" endY="52">
+        <border color="rgba(196, 169, 107, 0.35)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="60" topLeftY="24" type="text" id="bnE">
+        <content textType="caption" fontSize="10" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="180" height="24" topLeftX="720" topLeftY="24" type="text" id="bnc">
+        <content textType="caption" fontSize="10" fontFamily="Playfair Display" color="rgba(255, 255, 255, 0.651)" letterSpacing="2" textAlign="right" wrap="false">
+          <p>P.09 / INTERACTION</p>
+        </content>
+      </shape>
+      <img id="bTO" src="DylFbPdhhoI11RxhJWpc9Jefnrh" width="300" height="465" topLeftX="640" topLeftY="60">
+        <crop type="rect" leftOffset="58.46122778675283" rightOffset="58.46122778675283" topOffset="0" bottomOffset="0"/>
+      </img>
+      <shape width="440" height="30" topLeftX="60" topLeftY="74" type="text" id="bns">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" wrap="false">
+          <p>● CHAPTER SIX · 交互玩法</p>
+        </content>
+      </shape>
+      <shape width="520" height="52" topLeftX="60" topLeftY="110" type="text" id="bnQ">
+        <content textType="title" fontSize="34" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="2" wrap="false">
+          <p>走进小镇，像翻动绘本</p>
+        </content>
+      </shape>
+      <shape width="520" height="24" topLeftX="60" topLeftY="170" type="text" id="bnl">
+        <content textType="caption" fontSize="11" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" wrap="false">
+          <p>PLAY · WALK · EXPLORE</p>
+        </content>
+      </shape>
+      <line id="bnK" startX="60" startY="210" endX="110.00999900019994" endY="210">
+        <border color="rgba(196, 169, 107, 1)" width="1"/>
+      </line>
+      <shape width="44" height="34" topLeftX="60" topLeftY="232" type="text" id="bTV">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>01</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="230" type="text" id="bTJ">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>漫游模式</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="258" type="text" id="bnT">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>WASD 移动 · 空格跳跃 · Shift 疾跑</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="308" type="text" id="bnk">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>02</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="306" type="text" id="bnD">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>俯视模式</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="334" type="text" id="bnL">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>一键上帝视角，俯瞰整座小镇</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="384" type="text" id="bTI">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>03</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="382" type="text" id="bTw">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>昼夜切换</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="410" type="text" id="bnn">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>白天 / 黄昏 / 夜晚，或开启自动流转</p>
+        </content>
+      </shape>
+      <shape width="44" height="34" topLeftX="60" topLeftY="460" type="text" id="bnu">
+        <content textType="title" fontSize="18" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" bold="true" wrap="false">
+          <p>04</p>
+        </content>
+      </shape>
+      <shape width="480" height="26" topLeftX="120" topLeftY="458" type="text" id="bng">
+        <content fontSize="14" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.949)" bold="true" wrap="false">
+          <p>任务信物</p>
+        </content>
+      </shape>
+      <shape width="480" height="22" topLeftX="120" topLeftY="486" type="text" id="bnf">
+        <content textType="caption" fontSize="12" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.6)" wrap="false">
+          <p>E 键互动 · 收集信物 · 触发机关</p>
+        </content>
+      </shape>
+      <line id="bTX" startX="60" startY="522" endX="600.0009259251322" endY="522">
+        <border color="rgba(196, 169, 107, 0.3)" width="1"/>
+      </line>
+    </data>
+    <note id="bnv">
+      <content>
+        <p>交互是这座小镇的入口：第一人称漫步配合俯视浏览，兼顾沉浸与全局。</p>
+        <p>昼夜与自动流转让时间流动起来；信物与机关构成轻量的探索目标。</p>
+        <p>最后一页，我想用一句话收束整个项目。</p>
+      </content>
+    </note>
+  </slide>
+  <slide id="pEw">
+    <style/>
+    <data>
+      <img id="bnh" src="Q7JRbwYcUoI3H4xbLa2c8eDTnPw" width="960" height="540.0000000000001" topLeftX="0" topLeftY="-5.684341886080802e-14">
+        <crop type="rect" leftOffset="0" rightOffset="0" topOffset="474.66165413533815" bottomOffset="474.66165413533827"/>
+      </img>
+      <shape width="960" height="540" topLeftX="0" topLeftY="0" presetHandlers="0" type="rect" id="bnY">
+        <fill>
+          <fillColor color="rgba(20, 30, 26, 0.8)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="72" topLeftY="72" presetHandlers="0" type="rect" id="bnS">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="880" topLeftY="72" presetHandlers="0" type="rect" id="bnU">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="72" topLeftY="460" presetHandlers="0" type="rect" id="bnG">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <shape width="8" height="8" topLeftX="880" topLeftY="460" presetHandlers="0" type="rect" id="bny">
+        <fill>
+          <fillColor color="rgba(196, 169, 107, 1)"/>
+        </fill>
+        <content fontSize="16" fontFamily="思源黑体" color="rgba(31, 35, 41, 1)"/>
+      </shape>
+      <line id="bnP" startX="80" startY="64" endX="880.0006249997559" endY="64">
+        <border color="rgba(196, 169, 107, 0.6)" width="1"/>
+      </line>
+      <shape width="300" height="24" topLeftX="80" topLeftY="30" type="text" id="bnq">
+        <content textType="caption" fontSize="11" fontFamily="思源宋体" color="rgba(255, 255, 255, 0.749)" letterSpacing="2" wrap="false">
+          <p>LUSION · 唯美绘</p>
+        </content>
+      </shape>
+      <shape width="320" height="30" topLeftX="320" topLeftY="128" type="text" id="bnZ">
+        <content textType="caption" fontSize="13" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="3" textAlign="center" wrap="false">
+          <p>（ 品牌愿景 · Brand Vision ）</p>
+        </content>
+      </shape>
+      <shape width="600" height="64" topLeftX="180" topLeftY="196" type="text" id="bnA">
+        <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="4" textAlign="center" wrap="false">
+          <p>愿每座森林，都有一座</p>
+        </content>
+      </shape>
+      <shape width="600" height="64" topLeftX="180" topLeftY="264" type="text" id="bnb">
+        <content textType="title" fontSize="40" fontFamily="寒蝉锦书宋" color="rgba(255, 255, 255, 1)" bold="true" letterSpacing="4" textAlign="center" wrap="false">
+          <p>可以走进去的小镇</p>
+        </content>
+      </shape>
+      <shape width="600" height="28" topLeftX="180" topLeftY="344" type="text" id="bnx">
+        <content textType="caption" fontSize="12" fontFamily="Playfair Display" color="rgba(196, 169, 107, 1)" letterSpacing="4" textAlign="center" wrap="false">
+          <p>MAY EVERY WOOD HAVE A TOWN TO ENTER</p>
+        </content>
+      </shape>
+      <line id="bnB" startX="430" startY="400" endX="530.0049998750062" endY="400">
+        <border color="rgba(196, 169, 107, 0.6)" width="1"/>
+      </line>
+      <shape width="600" height="32" topLeftX="180" topLeftY="444" type="text" id="bnz">
+        <content fontSize="15" fontFamily="思源宋体" color="rgba(196, 169, 107, 1)" letterSpacing="6" textAlign="center" wrap="false">
+          <p>谢 谢 观 看 · 欢 迎 漫 步</p>
+        </content>
+      </shape>
+    </data>
+    <note id="bnd">
+      <content>
+        <p>最后，我们想保留的愿景很简单：让童话不只在书页里，而是随时可以走进的一座小镇。</p>
+        <p>感谢观看，也欢迎在浏览器里亲自漫步一圈。</p>
+      </content>
+    </note>
+  </slide>
+</presentation>
